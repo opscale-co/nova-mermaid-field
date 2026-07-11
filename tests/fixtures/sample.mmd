@@ -1,0 +1,7 @@
+flowchart TD
+    StartEvent_1([Start]) --> Task_1[Review request]
+    Task_1 --> Gateway_1{Approved?}
+    Gateway_1 -->|Yes| Task_2[Notify requester]
+    Gateway_1 -->|No| Task_3[Ask for changes]
+    Task_3 --> Task_1
+    Task_2 --> EndEvent_1([End])
